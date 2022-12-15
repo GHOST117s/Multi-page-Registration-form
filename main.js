@@ -3,7 +3,9 @@
     const name = document.getElementById('first-name');
     const dob = document.getElementById('DOB');
     const email = document.getElementById('email');
-    const mobile = document.getElementById('mobile');
+    const CountryCode = document.getElementById('countryCode')
+    var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+    const mobile = document.getElementById('phone');
     const gender = document.getElementById('Gender');
     const Father = document.getElementById('father-name');
     const Mother = document.getElementById('Mother-name');
@@ -44,7 +46,7 @@
         }
         if(mobile.value.length < 10) {
             
-            messages.push('Mobile number is not valid');
+            messages.push('Mobile number is not valid/check your country code');
             
             
         }
@@ -61,10 +63,14 @@
         if(Mother.value === '' || Mother.value == null) {
             messages.push('Mother name is required');
         }
+        if (CountryCode.value === '' || CountryCode.value == null) {
+            messages.push('Country Code is required');
+        }
 
 localStorage.setItem('name', JSON.stringify(name.value));
 localStorage.setItem('dob', JSON.stringify(dob.value));
 localStorage.setItem('email', JSON.stringify(email.value));
+localStorage.setItem('name', JSON.stringify(CountryCode.value));
 localStorage.setItem('mobile', JSON.stringify(mobile.value));
 localStorage.setItem('gender', JSON.stringify(gender.value));
 localStorage.setItem('collageId', JSON.stringify(collageId.value));

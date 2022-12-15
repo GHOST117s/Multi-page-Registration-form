@@ -2,15 +2,15 @@
 
 const upload = document.getElementById('upload')
 const form3 = document.getElementById('form3');
-
+var _validFileExtensions = 
 
 form3.addEventListener('submit', (e) => {
     let messages = [];
 
-    if (upload.value === '' || upload.value == null) {
+    if (upload.value ===''  || upload.value == null)  {
         messages.push('Upload is required');
-    }
-       
+        } 
+    
 
 
     if(messages.length > 0) {
