@@ -4,6 +4,7 @@
 
 The frontend application is implemented using HTML, CSS, and JavaScript
 and for data handling use local storage crome storage.
+all file and function are valid
 
 
 tried to store data using PHP but its not working
