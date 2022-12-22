@@ -1,11 +1,15 @@
-
+var input = document.querySelector("#mobile");
+    window.intlTelInput(input, {
+        separateDialCode: true,
+       
+        preferredCountries: ["in", "jp",  "no"]
+    });
 ////personl details
-    const name = document.getElementById('first-name');
+    const Fname = document.getElementById('first-name');
+    const Lname = document.getElementById('Last-name');
     const dob = document.getElementById('DOB');
     const email = document.getElementById('email');
-    const CountryCode = document.getElementById('countryCode')
-    var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
-    const mobile = document.getElementById('phone');
+    const mobile = document.getElementById('mobile');
     const gender = document.getElementById('Gender');
     const Father = document.getElementById('father-name');
     const Mother = document.getElementById('Mother-name');
@@ -35,8 +39,11 @@
     form.addEventListener('submit', (e) => {
         let messages = [];
 
-        if (name.value === '' || name.value == null) {
-            messages.push('Name is required');
+        if (Fname.value === '' || Fname.value == null) {
+            messages.push('First Name is required');
+        }
+        if (Lname.value === '' || Lname.value == null) {
+            messages.push('Last Name is required');
         }
         if(dob.value === '' || dob.value == null) {
             messages.push('Date of Birth is required');
@@ -46,7 +53,7 @@
         }
         if(mobile.value.length < 10) {
             
-            messages.push('Mobile number is not valid/check your country code');
+            messages.push('Mobile number is not valid');
             
             
         }
@@ -63,15 +70,14 @@
         if(Mother.value === '' || Mother.value == null) {
             messages.push('Mother name is required');
         }
-        if (CountryCode.value === '' || CountryCode.value == null) {
-            messages.push('Country Code is required');
-        }
 
-localStorage.setItem('name', JSON.stringify(name.value));
+localStorage.setItem('name', JSON.stringify(Fname.value));
+
+localStorage.setItem('name', JSON.stringify(Lname.value));
 localStorage.setItem('dob', JSON.stringify(dob.value));
 localStorage.setItem('email', JSON.stringify(email.value));
-localStorage.setItem('name', JSON.stringify(CountryCode.value));
 localStorage.setItem('mobile', JSON.stringify(mobile.value));
+
 localStorage.setItem('gender', JSON.stringify(gender.value));
 localStorage.setItem('collageId', JSON.stringify(collageId.value));
 localStorage.setItem('Father', JSON.stringify(Father.value));
